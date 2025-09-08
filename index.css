@@ -21,22 +21,19 @@
     /* size vars */
     --nav-height: 3rem;
     --home-padding: 1.2rem;
-    --round-box-max-width: 55rem;
+    --round-box-max-width: 65rem;
     --std-text-inc: 1.1rem;
     --round-box-width: 60%;
     }
 
 html {
     background-image: url(images/inc-checker-bg.png);
+    background-attachment: fixed;
     /*color: var(--text-purple);*/
 }
 
 /* Define audio element properties */
-audio {
-    width: calc(var(--home-max-width) / 3);
-    vertical-align: middle;
-    vertical-align: -webkit-baseline-middle;
-}
+
 
 /* Define navbar, footer & multipurpose flexbox container first! */
 
@@ -100,7 +97,6 @@ audio {
 /* Landing page formatting */
 
 .title {
-    width: 100%;
     margin-top: var(--nav-height);
     font-family: "yink", sans-serif;
     letter-spacing: 0.4rem;
@@ -120,60 +116,52 @@ audio {
     margin-block-end: var(--nav-height);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .title {
-        -webkit-animation: shrink-out linear;
-        animation-timeline: view();
-    }
-}
-
-@-webkit-keyframes shrink-out {
-    from {scale: 1.7;}
-    to {scale: 0.5;}
-}
-
 .audio-preview {
     width: var(--round-box-width);
     max-width: var(--round-box-max-width);
     margin-inline: auto;
     background-color: var(--bg-offwhite);
     border-radius: 2rem;
-    display: table;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -ms-flex-line-pack: center;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    padding: var(--home-padding);
+    /*
+    flex-direction: row;
+    flex-wrap: nowrap;
+    */
+    justify-content: space-around;
     vertical-align: middle;
-    padding-block: 0;
-    margin-bottom: var(--home-padding);
-    gap: 1rem;
+    /*gap: 1rem;*/
+    margin-block: 2rem;
 }
 
 .audio-desc {
-    width: 70%;
     color: var(--text-grey);
     text-align: right;
 }
 
-.audio-desc h5 {
-    font-weight: 900;
-    font-size: 1.3em;
+.audio-desc h2 {
+    /*font-weight: 800;*/
+    font-size: 2em;
+    text-align: left;
     /*margin-bottom: var(--std-text-inc);*/
 }
 
-.audio-desc i {
-    padding-bottom: var(--std-text-inc);
-    display: inline;
+.audio-desc h3 {
+    /*font-weight: 700;*/
+    font-size: 1rem;
+    text-align: left;
+    /*margin-bottom: var(--std-text-inc);*/
 }
 
-.audio-desc li {
+.audio-desc p {
     font-size: var(--std-text-inc);
     list-style: none;
 }
 
-.audio-holder {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
+audio {
+    width: 100%;
 }
 
 .home {
@@ -187,7 +175,7 @@ audio {
     -ms-flex-pack: center;
     -ms-flex-line-pack: center;
     text-align: justify;
-    padding-inline: var(--home-padding);
+    padding: var(--home-padding);
 }
 
 @media (max-width: 768px) {

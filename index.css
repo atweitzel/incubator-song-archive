@@ -183,40 +183,20 @@ audio {
         font-size: 9.4vw;
         margin-bottom: -50;
     }
-    @-webkit-keyframes shrink-out {
-    from {scale: 2.9;}
-    to {scale: 0.5;}
-    }
-    .audio-preview a > img {
-        -o-object-fit: cover;
-        object-fit: cover;
-        padding-left: 0.5rem; /* this is a dumb fix */
-        padding-block: var(--home-padding);
-    }
-    .audio-desc {
-        margin-inline: auto;
-        margin-top: var(--home-padding);
-        max-width: 500px;
-        border: dotted var(--text-purple) 2px;
-        
-    }
-    /*
-    .audio-preview > :not(img):first-child {
-        padding-inline: 0.5rem;
-        text-align: left;
-        text-align-last: left;
-    }
 
-    .audio-preview > :not(img):last-child {
-        padding-inline: 0.5rem;
-        text-align: left;
+    .home {
+        width: 85%;
+        overflow-wrap: anywhere;
     }
-    */
+    
+    .audio-preview {
+        width: 85%;
+    }
+    
     .audio-desc {
-        -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-        order: 2;
+        overflow-wrap: anywhere;
     }
+    
 }
 
 @media (min-width: 768px) {
